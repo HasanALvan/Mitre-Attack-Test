@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Web_Project.Models.Attack>
+
+@{
+    ViewBag.Title = "Attacks";
+}
+
+<h2>Attacks</h2>
+<p>
+    Select an attack you would like to perform on your machine.<br />
+    Click download and program will run automaticly when download is complete<br />
+    You can see the results at results page<br />
+
+<table class="table" style="background-color:black;color:white">
+    <tr>
+        <th>
+            Test ID
+        </th>
+        <th>
+            Test Explanation
+        </th>
+        <th>
+            
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.attacks)
+    {
+<tr>
+    <td>
+        @item.ID
+    </td>
+    <td>
+        @item.test_exp
+    </td>
+    <td>
+        @using (Html.BeginForm("Download", "Attack", new { ID = @item.ID }, FormMethod.Post))
+        {
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Download" class="btn btn-default" />
+                </div>
+            </div>
+        }
+    </td>
+    <td>
+        @using (Html.BeginForm("Result", "Attack", new { ID = @item.ID }, FormMethod.Post))
+        {
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Result" class="btn btn-default" />
+                </div>
+            </div>
+        }
+    </td>
+
+</tr>
+    }
+
+</table>
+

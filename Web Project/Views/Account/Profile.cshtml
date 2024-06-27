@@ -1,0 +1,54 @@
+﻿@model Web_Project.Models.Account
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>Profile</h2>
+
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Name
+        </dt>
+
+        <dd>
+            @Session["Username"]
+        </dd>
+
+        <dt>
+            Surname
+        </dt>
+
+        <dd>
+            @Session["Surname"]
+        </dd>
+
+        <dt>
+            Mail
+        </dt>
+
+        <dd>
+            @Session["Mail"]
+        </dd>
+
+
+
+    </dl>
+
+    <div>
+        @using (Html.BeginForm("Settings", "Account", FormMethod.Post))
+        {
+            <input type="submit" value="Setting" class="btn btn-default" />
+        }
+        <br />
+        @using (Html.BeginForm("Logout", "Account", FormMethod.Post))
+        {
+            <input type="submit" value="Logout" class="btn btn-default" />
+        }
+
+    </div>
+
+</div>

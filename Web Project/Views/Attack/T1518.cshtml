@@ -1,0 +1,27 @@
+﻿@model Web_Project.Models.Attack
+
+@{
+    ViewBag.Title = "T1518";
+}
+
+<h2>T1518</h2>
+
+<div>
+    <h2>
+        Test Results
+        @using (Html.BeginForm("DownloadResult", "Attack", new { ID = "T1518" }, FormMethod.Post))
+        {
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Download" class="btn btn-default" />
+                </div>
+            </div>
+        }
+    </h2>
+    @{
+        foreach (var item in ViewBag.Attack)
+        {
+            <p>@item</p>
+        }}
+
+</div>

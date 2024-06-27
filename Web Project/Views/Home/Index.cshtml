@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron" style="background-color:lightslategrey;color:white;">
+    <h1>MITRE ATT&CK®</h1>
+    <p class="lead">
+        MITRE ATT&CK® is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. The ATT&CK knowledge base is used as a foundation for the development of specific threat models and methodologies in the private sector, in government, and in the cybersecurity product and service community.
+        With the creation of ATT&CK, MITRE is fulfilling its mission to solve problems for a safer world by bringing communities together to develop more effective cybersecurity. ATT&CK is open and available to any person or organization for use at no charge.
+     <p>
+    <a href="https://attack.mitre.org/" class="btn btn-primary btn-lg">Visit Mitre</a></p>
+</div>
+<h2>Welcome @Session["Username"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>ATT&CK-TEST</h2>
+        <p>
+            Using two of the technics that we present to you, you can test your device against attacks and see the results of an attack.
+        </p>
+       
+    </div>
+    <div class="col-md-4">
+        <h2>Mitre</h2>
+        <p>Using Mitre attack website you can learn more about many attacks and how they are conducted.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Test Now</h2>
+        <p><a class="btn btn-default" href="https://localhost:44349/Attack/Attacks">Learn more &raquo;</a></p>
+    </div>
+</div>
